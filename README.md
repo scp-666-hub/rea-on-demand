@@ -46,6 +46,13 @@ cp -r rea-on-demand ~/.dsh/skills/rea-on-demand
 cp -r rea-on-demand ~/.claude/skills/rea-on-demand
 ```
 
+Windows PowerShell:
+
+```powershell
+git clone https://github.com/scp-666-hub/rea-on-demand
+Copy-Item -Recurse rea-on-demand "$env:USERPROFILE\.dsh\skills\rea-on-demand"
+```
+
 Restart or reload the agent so it picks up the skill catalog.
 
 Requirements: Node `^22.19` / `^24.11` / `>=26`, `npx`.
@@ -63,6 +70,17 @@ Requirements: Node `^22.19` / `^24.11` / `>=26`, `npx`.
 - A lookalike organization `rea-tools` distributed a trojanized build (VirusTotal
   8/45, 172 downloads before takedown). **Only install from the official npm package
   `rea-agents`; refuse any "Windows standalone exe".**
+
+## Caveats & scope
+
+- This repository is a **skill file, not software**. It cannot enforce anything; the
+  red lines are instructions the agent is expected to follow. Sandboxing and approval
+  remain the host agent's job.
+- Verified only on **Windows 11 + DeepSeek Harness**. Other agents are untested here.
+- REA releases very quickly (6.7.0 at the time of writing). Subcommands and flags can
+  drift — re-check `--help` instead of trusting remembered flags.
+- The wrapped tool is a third-party MIT project. This repo does not vendor it, and is
+  not affiliated with it.
 
 ## Files
 
